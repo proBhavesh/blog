@@ -11,6 +11,7 @@ export default function Post({ posts }) {
   // const postTitle = posts[0].fields.title;
   return (
     <>
+      <Meta title={title} />
       <div>{title}</div>
       <div>{slug}</div>
     </>

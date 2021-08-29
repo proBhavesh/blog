@@ -2,6 +2,23 @@ import Link from "next/link";
 import { createClient } from "contentful";
 import Header from "../components/Header.js";
 import PostCard from "../components/PostCard.js";
+import Meta from "../components/Meta";
+
+//page comonent
+export default function index({ posts }) {
+  console.log(posts);
+  return (
+    <>
+      <Meta />
+      <div className="w-11/12 m-auto">
+        <Header />
+        {posts.map((post) => (
+          <PostCard key={post.sys.id} post={post} />
+        ))}
+      </div>
+    </>
+  );
+}
 
 //getting data
 export const getStaticProps = async () => {
@@ -18,24 +35,3 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-//page comonent
-const index = ({ posts }) => {
-  console.log(posts);
-  // const postTitle = posts[0].fields.title;
-  // const hrefValue = postTitle.replace(/\s+/g, "-").toLowerCase();
-  // console.log(hrefValue);
-  // console.log(posts)
-  return (
-    <>
-      <div className="w-11/12 m-auto">
-        <Header />
-        {posts.map((post) => (
-          <PostCard key={post.sys.id} post={post} />
-        ))}
-      </div>
-    </>
-  );
-};
-
-export default index;
