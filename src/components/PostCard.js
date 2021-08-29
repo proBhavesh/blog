@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const PostCard = ({ post }) => {
-	const { title, slug } = post.fields;
+	const { title, postUrl } = post.fields;
 	// const slug = title.replace(/\s+/g, "-").toLowerCase();
 	return (
 		<>
