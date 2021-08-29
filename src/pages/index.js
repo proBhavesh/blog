@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { createClient } from "contentful";
 import Header from "../components/Header.js";
+import PostCard from "../components/PostCard.js";
 
+//getting data
 export const getStaticProps = async () => {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -17,16 +19,20 @@ export const getStaticProps = async () => {
   };
 };
 
+//page comonent
 const index = ({ posts }) => {
-  const postTitle = posts[0].fields.title;
-  const hrefValue = postTitle.replace(/\s+/g, "-").toLowerCase();
+  console.log(posts);
+  // const postTitle = posts[0].fields.title;
+  // const hrefValue = postTitle.replace(/\s+/g, "-").toLowerCase();
   // console.log(hrefValue);
   // console.log(posts)
   return (
     <>
       <div className="w-11/12 m-auto">
         <Header />
-        <Link href={`posts/${hrefValue}`}>{postTitle}</Link>
+        {posts.map((post) => (
+          <PostCard key={post.sys.id} post={post} />
+        ))}
       </div>
     </>
   );
