@@ -50,7 +50,7 @@ export const Navbar = () => {
 								About
 							</a>
 						</Link>
-							<a href="https://twitter.com/yoBhavesh" target="_blank"className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-brightYellow hover:text-white">
+							<a href="https://twitter.com/yoBhavesh" target="_blank" rel="noreferrer" className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-brightYellow hover:text-white">
 								Twitter
 							</a>
 						
