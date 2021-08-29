@@ -2,21 +2,52 @@ import Link from "next/link";
 import Head from "next/head";
 import { createClient } from "contentful";
 import Meta from "../../components/Meta";
-
+import { dateFinder } from "../../components/mainFunctions.js";
 // import Container from "../../components/container";
 
-export default function Post({ posts }) {
-  const { title, slug } = posts.fields;
-  // console.log(posts);
-  // const postTitle = posts[0].fields.title;
+export default function Post({ post }) {
+  //post data
+  const {
+    title,
+    slug,
+    keywords,
+    description,
+    headOne,
+    paraOne,
+    headTwo,
+    paraTwo,
+    headThree,
+    paraThree,
+    headFour,
+    paraFour,
+    headFive,
+    paraFive,
+  } = post.fields;
+  //post date
+  const { createdAt } = post.sys;
+  //date formatte
+  const date = dateFinder(createdAt);
+
   return (
     <>
-      <Meta title={title} />
-      <article className="text-3xl text-lightWhite font-plex m-auto md:max-w-3xl ">
+      <Meta title={title} keywords={keywords} description={description} />
+      <article className="text-3xl text-lightWhite font-plex m-auto md:max-w-3xl mt-10 bg-gray">
         <h1 className="text-3xl text-lightWhite font-plex font-bold md:text-5xl ">
           {title}
         </h1>
-        <div>{slug}</div>
+        <button className="w-auto p-2 mt-2 bg-brightYellow h-auto rounded-xl text-base">
+          {date}
+        </button>
+        <h2 className="text-3xl mt-5 mb-3 text-bold">{headOne}</h2>
+        <p className="text-lg">{paraOne}</p>
+        <h2 className="text-3xl mt-5 mb-3 text-bold">{headTwo}</h2>
+        <p className="text-lg">{paraTwo}</p>
+        <h2 className="text-3xl mt-5 mb-3 text-bold">{headThree}</h2>
+        <p className="text-lg">{paraThree}</p>
+        <h2 className="text-3xl mt-5 mb-3 text-bold">{headFour}</h2>
+        <p className="text-lg">{paraFour}</p>
+        <h2 className="text-3xl mt-5 mb-3 text-bold">{headFive}</h2>
+        <p className="text-lg">{paraFive}</p>
       </article>
     </>
   );
@@ -26,6 +57,7 @@ const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
+
 // <=-----------Getting Paths----------->
 export const getStaticPaths = async () => {
   const res = await client.getEntries({ content_type: "blogPost" });
@@ -53,7 +85,7 @@ export const getStaticProps = async ({ params }) => {
   });
   return {
     props: {
-      posts: items[0],
+      post: items[0],
     },
   };
 };

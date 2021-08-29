@@ -6,7 +6,7 @@ import Meta from "../components/Meta";
 
 //page comonent
 export default function index({ posts }) {
-  // console.log(posts);
+  console.log(posts);
   return (
     <>
       <Meta />

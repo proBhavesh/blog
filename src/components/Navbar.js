@@ -46,20 +46,14 @@ export const Navbar = () => {
 				>
 					<div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
 						<Link href="/">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-brightYellow hover:text-white ">
-								Blog
-							</a>
-						</Link>
-						<Link href="/">
 							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-brightYellow hover:text-white">
 								About
 							</a>
 						</Link>
-						<Link href="/">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-brightYellow hover:text-white">
+							<a href="https://twitter.com/yoBhavesh" target="_blank"className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-brightYellow hover:text-white">
 								Twitter
 							</a>
-						</Link>
+						
 					</div>
 				</div>
 			</nav>
