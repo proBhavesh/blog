@@ -7,13 +7,17 @@ import Meta from "../../components/Meta";
 
 export default function Post({ posts }) {
   const { title, slug } = posts.fields;
-  console.log(posts);
+  // console.log(posts);
   // const postTitle = posts[0].fields.title;
   return (
     <>
       <Meta title={title} />
-      <div>{title}</div>
-      <div>{slug}</div>
+      <article className="text-3xl text-lightWhite font-plex m-auto md:max-w-3xl ">
+        <h1 className="text-3xl text-lightWhite font-plex font-bold md:text-5xl ">
+          {title}
+        </h1>
+        <div>{slug}</div>
+      </article>
     </>
   );
 }
@@ -33,7 +37,6 @@ export const getStaticPaths = async () => {
       },
     };
   });
-  console.log(paths);
   return {
     paths,
     fallback: false,

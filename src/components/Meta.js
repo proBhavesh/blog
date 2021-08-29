@@ -9,6 +9,12 @@ const Meta = ({ title, keywords, description }) => {
       <meta charSet="utf-8" />
       <link rel="icon" href="/favicon.ico" />
       <title>{title}</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
+        rel="stylesheet"
+      />
     </Head>
   );
 };

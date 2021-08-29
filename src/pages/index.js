@@ -6,11 +6,11 @@ import Meta from "../components/Meta";
 
 //page comonent
 export default function index({ posts }) {
-  console.log(posts);
+  // console.log(posts);
   return (
     <>
       <Meta />
-      <div className="w-11/12 m-auto">
+      <div className="bg-lightGray h-100 font-plex text-lg text-lightWhite break-words flex flex-wrap flex-col md:ml-auto mr-auto max-w-3xl mt-14">
         <Header />
         {posts.map((post) => (
           <PostCard key={post.sys.id} post={post} />
