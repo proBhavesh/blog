@@ -28,7 +28,7 @@ export const getStaticPaths = async () => {
   const paths = res.items.map((item) => {
     return {
       params: {
-        slug: item.fields.slug.toString(),
+        slug: item.fields.postUrl,
       },
     };
   });
@@ -45,7 +45,7 @@ export const getStaticProps = async ({ params }) => {
   // console.log("This is titlfrom gsp", title);
   const { items } = await client.getEntries({
     content_type: "blogPost",
-    "fields.slug": params.slug,
+    "fields.postUrl": params.slug,
   });
   return {
     props: {
