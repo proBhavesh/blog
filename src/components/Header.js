@@ -1,7 +1,7 @@
 const Header = () => {
 	return (
 		<>
-			<div className="font-plex">
+			<div className="font-plex text-center">
 				<h1 className="text-3xl md:text-5xl">Hi👋, Its Bhavesh</h1>
 				<h2 className="text-2xl md:text-2xl mt-2 mb-6">
 					Here I share my views on technology and 

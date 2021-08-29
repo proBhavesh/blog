@@ -9,6 +9,10 @@ const Meta = ({ title, keywords, description }) => {
       <meta charSet="utf-8" />
       <link rel="icon" href="/favicon.ico" />
       <title>{title}</title>
+      <meta
+        name="google-site-verification"
+        content="goG2RV72oRydCQaxXvLFzcmQkIyCXwKep7HMAVGG_YY"
+      />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       <link
