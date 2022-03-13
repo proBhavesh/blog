@@ -27,6 +27,8 @@ export const getStaticProps = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
+// pat=CFPAT-_l_05nkmhobLrkcMk0C0Xgdy7A2ahQpEUkr9Wm_8T7g
+
   const res = await client.getEntries({ content_type: "blogPost" });
 
   return {
